@@ -1,0 +1,39 @@
+Functions and Methods
+-----------------------------------------------------------------
+
+ [ Functions ]
+
+  ==> Key Function Parts
+
+    - Calling the function should be readable.
+    - The number and order of Arguments should be clear.
+    - Function body should be readable.
+    - The length of function body matters.
+
+  ==> Minimize the no of Parameters.
+  ==> Try to avoid output arguments - especially if they are unexpected.
+  ==> createId(user) -> wrong,  addId(user) --> Good,  user.addId(); --> best.
+
+  ==> Functions should do exactly one Thing
+  ==> Function should do work that's one level of abstraction below their name
+    e.g 
+        function emailIsValid(email) {
+          return email.includes('@');
+        }
+  ==> Function should not have mixed levels of abstraction.
+  ==> Don't write the same code for more than once.
+
+  ==> Try keeping the functions pure --> The same input yields ( generates ) the same output.
+  ==> Pure functions should not have side effects.
+  [ Side Effect ] --> A side effect is an operation which does not just act on function input 
+                      and change the functino output but which instead changes the overall system/program state.
+
+    e.g let lastAssignedId;
+        function generateId(userName) {
+          const id = '_id' + userName;
+          lastAssignedId = id;    // Side Effect;
+          return id;
+        }
+
+  ==> Avoid unexpected sideEffects.
+  ==> Name of function should imply that a side effect is likely to occure. 

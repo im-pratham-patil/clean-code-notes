@@ -1,0 +1,42 @@
+Class Object And Data Containers
+-----------------------------------------------------------------
+
+  [ Classes ]
+
+    --> You typically should prefer small classes over a few large classes.
+    --> Classes should have a single responsibility - Single Responsibily Principle (SRP)
+    --> e.g A product class should be responsible to Product Related Issues. (e.g Change the product name not the user name)
+
+    [ Cohesion ]
+      -> How much are your class methods using the class properties.
+        [ Maximum Cohesion ] --> All Methods each use all properties. ( Highly Cohesion object)
+        [ No Cohesion ] --> All Methods don't use any class properties.
+                        --> DataStructures / Containers with utility methods.
+
+        [ Highly Cohesion ] -> Lies between Maximum Cohesion and No Cohesion
+
+        [ Law of Demeter ] --> 
+          [ Principle of Least Knowledge ] 
+            --> Don't Depend on the internals of "strangers" ( other objects which you don't directly know )
+
+              e.g this.customer.lastPurchase.date   ==>   date is the stranger now.
+
+
+            --> Code in a method may only access direct internals ( properties and methods ) of:
+              -> The object it belongs to 
+              -> Objects that are stored in properties of that object
+              -> Objects which are received as a method parameters.
+              -> Objects which are created in the method.
+
+
+
+
+    [ SOLID PRINCIPLES ]
+
+      S ==> Single Responsibily 
+      O ==> Open-Closed Principle
+      L ==> Liskov Subtitution Principle
+      I ==> Interface Segregation Principle
+      D ==> Dependancy Inversion Principle 
+
+      

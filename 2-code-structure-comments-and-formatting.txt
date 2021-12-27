@@ -1,0 +1,49 @@
+Code Structure, Comments & Formatting.
+---------------------------------------------------------------
+
+Bad Comments 
+	- Comments that convey the redundant messages.
+	- Dividers / Block Markers
+	- Misleading Commnets.
+	- Commented-Out Code.
+
+Good Comments
+
+	- Legal Information  // Top at the file includes Author and Date 
+	- Explanation which can't be replaced by good naming. // e.g Regular expression Meaning.
+	- Warning!
+	- Todo note.
+	- Documentation Strings.
+
+
+----------------------------------------------------------------
+
+What is code Formatting. ?
+
+	- Code formatting improves the Readability and Transports Meaning ?
+	- Formatting rules differs between languages.
+	- Follow Language specific conventions and guidelines.
+
+	- Horizontal Formatting.
+		- Space Between Lines.
+		- Grouping Of Code.
+		- Width Of Line.
+
+	- Vertical Formatting.
+		- Indentation.
+		- Space Between Code.
+
+
+	[ Vertical Formatting ]
+		- Code should be readable like an essay - top to bottom without too many "jumps"
+		- Consider splitting files with multiple concepts ( e.g classes ) into multiple files.
+		- Different Concepts ("areas") should be seperated by spacing. (function after function, class definitions after imports)
+		- Similer concepts ("areas") should not be seperated by spacing.
+		- Related concepts should be keep close to each other.
+
+	[ Horizontal Formatting ]
+		- Lines of code should be readable without scrolling - avoid very long sentences.
+		- Use Indentation even if not required technically.
+		- Break long lines into multiple shorter once.
+		- Use clear but not unreadably long names.
+		

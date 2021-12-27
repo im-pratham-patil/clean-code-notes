@@ -1,0 +1,151 @@
+Clean code Introduction and Naming 
+----------------------------------------------------------
+
+Q1. What clean code is not ?
+	- It's not whether code works. ( It's about easy to read and understand. )
+	
+----------------------------------------------------------	
+Q2. What is clean code ?
+	- Should be readable and meaningful.
+	- Should reduce cognitive load ( understanding is easy. )
+	- Should be concise and "to the point".
+	- Should avoid unintuitive names, complex nesting and big code blocks.
+	- Should follow common best practices and patterns
+	- Should be fun to write and easy to maintain
+
+
+----------------------------------------------------------
+*** Clean Code Key points ***
+----------------------------------------------------------
+
+	= Names 								[ Variables, Functions, Classes ]
+	= Structure & Comments					[ Code Formatting, Good & Bad Comments ]
+	= Functions 							[ Length, Parameters ]
+	= Conditionals & Error Handling			[ Deep Nesting, Missing Error Handling ]
+	= Classes & DataStructures				[ Missing Distinction, Bloated Classes ]
+
+
+	- SOLUTIONS 							[ Rules & Concepts, Patterns & Principles, Test-Driven Development ]
+
+----------------------------------------------------------
+
+DIFF BETWEEN 
+----------------------------------------------------------
+
+	CLEAN CODE
+		- How to write the code.
+		- Focus on single problem/file.
+
+	CLEAN ARCHITECTURE
+		- Where to write which code.
+		- Focus on the project as a whole.
+
+============================================================
+
+	** NAMING **
+
+		- Name should be meaningful.
+		- Well named "things" allows readers to understand your code without going through it in details.
+
+
+		HOW TO NAME CORRECTLY
+
+			[ VARIABLES ] [ Data Containers ] --> e.g user input data, result of validation, list of products.
+				- Use Nouns or short phrases with adjectives.
+				- userData = {}, isValid = ..
+
+			[ FUNCTIONS / METHODS ] [ COMMANDS OR CALCULATED VALUES ]  --> e.g Send data to server, check if the user input is valid.
+				- Use verbs or short phrases with adjectives.
+				- sendData(), inputIsValid()
+
+			[ Classes ] 
+				- Use classes to create "things".
+				- e.g a user, a product, a http request body.
+				- use nouns or short phrases with nouns.
+				- class User {}, class RequestBody {...}.
+
+		NAME CASING
+			1. snake_case			-> Python 						-> is_valid, send_response			--> Variables, Functions, Methods
+			2. camelCase			-> Java/JavaScript				-> isValid, sendResponse 			--> Variables, Functions, Methods
+			3. PascalCase			-> Python/Java/JavaScript		-> IsValid, SendResponse 			--> Classes
+			4. kebap-case			-> HTML 						-> is-valid, send-response-btn 		--> Custom HTML elements
+
+
+		-- Theory --	[ Variables ]
+			
+				Object 				
+						==	Describe the value   			
+						==	user, database,			
+						>> 	Describe more details withoud introducing redundancy.
+						== authenticatedUser, sqlDatabase.
+
+				Number or String 	
+						==	Describe the value 				
+						==	name, age				
+						>> 	Same as above.
+						== 	firstName, age
+
+				Boolean				
+						==	Answer a true false question 	
+						== 	isActive, isLoggedIn	
+						>>  Same as above.
+						==  isActiveUser, isUserExists.
+
+
+			/* Examples */
+
+				-- A User Object ( name, age, email )
+
+				Bad Name   ==>   u, data             ==> "u" and "data" could be anything.
+				Okey Name  ==>   userData, person    ==> "userData" is a bit redundant, and "person" is too unspecific. 
+				Good Name  ==>   user, customer      ==> "user" is descriptive, "customer" is even more specific.
+
+				-- A User input validation: True / False
+
+				Bad Name   ==>   v, val                      ==> "v" could be anything and "val" also stands for value.
+				Okey Name  ==>   correct, validatedInput     ==> both value doesn't necessarily imply a true/false value. 
+				Good Name  ==>   isCorrect, isValid          ==> descriptive and value type is clear.
+
+
+		-- Theory --	[ Functions / Methods ]
+
+				-- Functions performs an operation
+					-  Describe the operation.
+					-  getUser(...)
+					-  response.send(...)
+					>> Provide more details without introducing redundancy.
+					- getUserByEmail(..)
+
+				-- Functions computes a boolean
+					- Answer a true / false question.
+					- isValid(..)
+					- purchase.isPaid(..)
+					>> Provide more details without introducing redundancy.
+					- emailIsValid()
+
+
+			/* Examples */
+
+				-- What function does -> Saves user to the database.
+				Bad Name   ==>   process, handle            ==> both are very unspecific what is being "processed".
+				Okey Name  ==>   save, storeData    		==> atleast we know that something is being saved. but what ? 
+				Good Name  ==>   saveUser, user.store      	==> The intent is very clear- especially with the method.
+
+				-- What function does -> validate the user input.
+				Bad Name   ==>   process, save          ==> both are very unspecific what is being "processed".
+				Okey Name  ==>   validateSave, check   	==> atleast we know that something is being saved. but what ? 
+				Good Name  ==>   isValid, validate      	
+
+
+		-- Theory --	[ Classes ] - A User
+			/* Examples */
+				Bad Name   ==>   UEntity, ObjA
+				Okey Name  ==>   UserObj, AppUser
+				Good Name  ==>   User, Admin
+
+			[ A Database ]
+				Bad Name   ==>   class Data, class DataStorage
+				Okey Name  ==>   class Db, class Data
+				Good Name  ==>   class Database, class SqlDatabase
+
+        

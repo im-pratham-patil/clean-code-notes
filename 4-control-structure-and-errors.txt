@@ -1,0 +1,16 @@
+Control Structure and Errors
+-----------------------------------------------------------------
+
+  ==> Avoid Deep nesting using factory functions and polymorphisms.
+  ==> prefer positive checks over negative checks.
+  ==> Utilize errors.
+  ==> Use guards & fail fast.
+
+    e.g if(email.includes('@')) {
+      // do stuff
+    }
+
+    To the
+      if (!email.includes('@'))
+        return;
+      // do stuff
